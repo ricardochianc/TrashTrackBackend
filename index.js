@@ -30,4 +30,8 @@ mongoose.connection.on('error', () => {
     console.log('There was an error');
 });
 
+app.get('/', (req, res) => {
+    res.send('Server running');
+});
+
 module.exports = app;
