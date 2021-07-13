@@ -7,9 +7,12 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const users = require('./routes/users');
+const login = require('./routes/login');
+
 app.use(cors());
 app.use(bodyParser());
 app.use('/users', users);
+app.use('/login', login);
 
 
 app.listen(process.env.PORT || 8080, () => {
