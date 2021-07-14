@@ -42,9 +42,15 @@ router.post('/push', jsonBodyParser, async (req, res) => {
     }
 });
 
-router.get('/getEvents', (req, res) => {    
-    const events = await Event.find();
-    res.status(200).json(events);
+router.get('/getEvents', async(req, res) => {
+    
+    try {
+        const events = await Event.find();
+        res.status(200).json(events);        
+    } catch (error) {
+        res.status(404).send(error);
+    }
+
 });
 
 module.exports = router;
