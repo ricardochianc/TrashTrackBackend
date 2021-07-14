@@ -25,6 +25,7 @@ router.post('/push', jsonBodyParser, async (req, res) => {
         }
         else {
             description = message;
+            time = 'N/A';
         }
 
         const new_event = new Event({
