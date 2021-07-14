@@ -22,6 +22,8 @@ router.post('/push', jsonBodyParser, async (req, res) => {
             else if (message.split(',')[0].split('=')[1] === '1') {
                 description = 'Ha reiniciado la continuidad';
             }
+
+            time = message.split(',')[1].split('=')[1]
         }
         else {
             description = message;
@@ -40,8 +42,9 @@ router.post('/push', jsonBodyParser, async (req, res) => {
     }
 });
 
-router.get('/test', (req, res) => {    
-    res.status(200).send('Works!');
+router.get('/getEvents', (req, res) => {    
+    const events = await Event.find();
+    res.status(200).json(events);
 });
 
 module.exports = router;
