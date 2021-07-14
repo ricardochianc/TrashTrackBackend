@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ricardochianc/TrashTrackBackend#readme",
   "dependencies": {
+    "@google-cloud/pubsub": "^2.16.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",

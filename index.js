@@ -8,11 +8,13 @@ const app = express();
 
 const users = require('./routes/users');
 const login = require('./routes/login');
+const pubsub = require('./routes/pubsub');
 
 app.use(cors());
 app.use(bodyParser());
 app.use('/users', users);
 app.use('/login', login);
+app.use('/pubsub', pubsub);
 
 
 app.listen(process.env.PORT || 8080, () => {
